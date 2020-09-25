@@ -63,3 +63,13 @@ Route::get("Arreglo", function(){
         // con la funcion view
         return view("paises")->with("paises", $paises);
 });
+
+//rutas de controlador
+route::get('artistas', "ArtistaController@index");
+route::get('artistas/create', "ArtistaController@create");
+route::post('artistas/store', "ArtistaController@store");
+
+route::resource('empleados', 'EmpleadoController');
+route::get('master', function(){
+    return view('layouts.master');
+});
